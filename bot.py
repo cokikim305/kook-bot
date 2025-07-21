@@ -70,7 +70,7 @@ class FinalBot:
 
                 # 获取完整成员信息来读取角色
                 guild = await self.bot.client.fetch_guild(self.guild_id)
-                member = await guild.fetch_member(user_id)
+                member = await self.bot.client.fetch_guild_member(self.guild_id, user_id)
                 current_roles = [str(role) for role in member.roles]
 
                 target_level = None
@@ -109,7 +109,7 @@ class FinalBot:
                     return
 
                 guild = await self.bot.client.fetch_guild(self.guild_id)
-                member = await self.bot.client.fetch_guild_member(self.guild_id, user_id)
+                members = await guild.fetch_member_list()
 
                 fixed = 0
                 for member in members:
