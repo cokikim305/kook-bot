@@ -1,2 +1,2 @@
-khl
+khl.py==0.3.6
 setuptools
