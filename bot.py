@@ -109,7 +109,7 @@ class FinalBot:
                     return
 
                 guild = await self.bot.client.fetch_guild(self.guild_id)
-                members = await guild.fetch_member_list()
+                member = await self.bot.client.fetch_guild_member(self.guild_id, user_id)
 
                 fixed = 0
                 for member in members:
